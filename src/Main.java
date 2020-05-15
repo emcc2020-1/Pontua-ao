@@ -11,9 +11,10 @@ public class Main{
 		System.out.println("---------------------------------- ");
 		System.out.println("INFORME OS DADOS DO ÚLTIMO ANO  ");
 		
-		double valorCompra,scoreC = 0,volumeCompras = 0;
+		double valorCompra,scoreC = 0,volumeCompras = 0, scoreIna, scorePag;
 		int compra, atrasos;
 		char modoPag;
+	
 		System.out.println();
 		System.out.println("Quantas compras o cliente fez no último ano? ");
 		compra = sc.nextInt();
@@ -24,6 +25,7 @@ public class Main{
 		atrasos = sc.nextInt();
 		System.out.println("A maioria das compras foi em dinheiro, cartão, ou boleto (D/C/B)?");
 		modoPag = sc.next().charAt(0);
+		System.out.println();
 		
 		if(valorCompra== 0) {
 			System.out.println("Score de volume de compras = " + scoreC);
@@ -48,6 +50,47 @@ public class Main{
 				}
 			}
 		}
+		
+		
+		System.out.println();
+		System.out.println();
+		
+		if(compra == 0 || atrasos > 0) {
+			scoreIna = 0;
+			System.out.println("Score de inadimplência = " + scoreIna ); 			
+		}
+		else {
+			if(compra > 0 && atrasos >= 1 ) {
+				scoreIna = 15;
+				System.out.println("Score de inadimplência = " + scoreIna);
+				
+			}
+			else {
+				if(compra > 0 && atrasos== 0 ) {
+					scoreIna = 30;
+					System.out.println("Score de inadimplência = " + scoreIna);
+				}
+			}
+		}
+		
+		
+		
+		
+		if((modoPag == 'D' || modoPag == 'd') && compra > 0 ) {
+			scorePag = 5;
+			System.out.println("Score de pagamento = " + scorePag);
+		}
+		else {
+			if(compra > 0 && ((modoPag == 'C' || modoPag == 'c')|| (modoPag == 'B' || modoPag == 'b'))) {
+				scorePag = 10;
+				System.out.println("Score de pagamento = " + scorePag);
+			}
+		}
+		
+		System.out.println();
+		System.out.println();
+		
+		
 		sc.close();
 	}
 	
