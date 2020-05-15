@@ -10,7 +10,19 @@ public class Main{
 		System.out.println("SISTEMA DE PERFIL DE CLIENTE ");
 		System.out.println("---------------------------------- ");
 		System.out.println("INFORME OS DADOS DO ÚLTIMO ANO  ");
+		
+		double valorCompra;
+		int compra;
+		System.out.println();
+		System.out.println("Quantas compras o cliente fez no último ano? ");
+		compra = sc.nextInt();
+		System.out.println("Qual o ticket médio?");
+		valorCompra = sc.nextDouble();
+		
+		
 		sc.close();
 	}
 	
 }
+
+
