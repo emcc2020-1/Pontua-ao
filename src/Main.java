@@ -11,8 +11,8 @@ public class Main{
 		System.out.println("---------------------------------- ");
 		System.out.println("INFORME OS DADOS DO ÚLTIMO ANO  ");
 		
-		double valorCompra,scoreC = 0,volumeCompras = 0, scoreIna, scorePag;
-		int compra, atrasos;
+		double valorCompra,scoreC = 0,volumeCompras = 0, scoreIna = 0, scorePag = 0 , fim;
+		int compra, atrasos ;
 		char modoPag;
 	
 		System.out.println();
@@ -89,6 +89,18 @@ public class Main{
 		
 		System.out.println();
 		System.out.println();
+		
+		fim = scorePag + scoreIna + scoreC;
+		
+		if(fim == 25 || fim == 0 ) {
+			System.out.println("Classificação final = CLIENTE BRONZE ");			
+		}
+		if(fim > 25 && fim <=75) {
+			System.out.println("Classificação final = CLIENTE PRATA ");	
+		}
+		if(fim > 75) {
+			System.out.println("Classificação final = CLIENTE OURO ");	
+		}
 		
 		
 		sc.close();
