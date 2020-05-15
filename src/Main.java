@@ -11,7 +11,7 @@ public class Main{
 		System.out.println("---------------------------------- ");
 		System.out.println("INFORME OS DADOS DO ÚLTIMO ANO  ");
 		
-		double valorCompra;
+		double valorCompra,scoreC = 0,volumeCompras = 0;
 		int compra, atrasos;
 		char modoPag;
 		System.out.println();
@@ -25,7 +25,29 @@ public class Main{
 		System.out.println("A maioria das compras foi em dinheiro, cartão, ou boleto (D/C/B)?");
 		modoPag = sc.next().charAt(0);
 		
-		
+		if(valorCompra== 0) {
+			System.out.println("Score de volume de compras = " + scoreC);
+					
+		}
+		else {
+			if(valorCompra > 0 && valorCompra < 3000) {
+				scoreC = 20;
+				System.out.println("Score de volume de compras = " + scoreC);
+			}
+			else {
+				if(valorCompra <= 3000 && compra > 2) {
+					scoreC = 40 ;
+					System.out.println("Score de volume de compras = " + scoreC);
+				}
+				else {
+					if(valorCompra > 3000) {
+						scoreC = 60;
+						System.out.println("Score de volume de compras = " + scoreC);
+					}
+					
+				}
+			}
+		}
 		sc.close();
 	}
 	
